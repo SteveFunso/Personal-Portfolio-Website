@@ -80,11 +80,16 @@ export const PROJECTS: Project[] = [
   {
     id: "agentic-ai-odl",
     title: "Agentic AI Email Intelligence",
-    role: "Lead AI Developer (ODL)",
+    role: "Lead AI Developer | Offshore Dimensions Ltd",
     category: "AI/ML",
-    description: "Architected a production-grade agentic AI system combining real-time MCP (Model Context Protocol) integration and RAG strategies. The system autonomously plans multi-step workflows to retrieve and analyze enterprise email data, deciding between live Gmail API calls and vector search based on context. Features self-optimizing retrieval logic and sub-second latency.",
-    techStack: ["Python (FastAPI)", "OpenAI GPT-4", "LangChain", "pgvector", "Anthropic MCP", "Next.js 16"],
-    impact: ["Retrieval time reduced: 30m → 5s", "99.9% Uptime via Hybrid Fallback", "Autonomous Multi-agent Planning"]
+    description: "Architected and deployed a production-grade agentic AI system that autonomously retrieves, analyzes, and responds to natural language queries across enterprise email data. The system features a multi-agent query orchestrator that autonomously decides between real-time Gmail API (via Anthropic MCP) and RAG-fallback strategies based on query context. Implemented intelligent context switching and autonomous planning for complex multi-step workflows.",
+    techStack: ["Python (FastAPI)", "OpenAI GPT-4", "Next.js 16", "Anthropic MCP", "pgvector", "LangChain"],
+    impact: [
+      "Retrieval time reduced: 30m → 5s",
+      "Processed 200+ emails with full metadata",
+      "99.9% Uptime via Hybrid Fallback",
+      "<1s Vector Search Latency"
+    ]
   },
   {
     id: "onenumba",
@@ -128,7 +133,7 @@ export const SKILLS: SkillCategory[] = [
   {
     name: "AI & Automation",
     icon: "Brain",
-    skills: ["Agentic Workflows", "RAG Architecture", "Langchain", "n8n", "LLMs", "UiPath (RPA)", "Python", "TensorFlow"]
+    skills: ["Agentic Workflows", "Anthropic MCP", "RAG Architecture", "Langchain", "n8n", "LLMs", "UiPath (RPA)", "Python"]
   },
   {
     name: "Backend Engineering",

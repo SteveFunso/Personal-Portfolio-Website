@@ -74,6 +74,13 @@ const Navbar: React.FC = () => {
               {link.name}
             </a>
           ))}
+          <a
+            href="#contact"
+            onClick={() => setIsOpen(false)}
+            className="text-center w-full px-5 py-3 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-bold shadow-lg shadow-cyan-500/20"
+          >
+            Hire Me
+          </a>
         </div>
       )}
     </nav>
