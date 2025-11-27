@@ -1,0 +1,34 @@
+import { useEffect, useState, useRef } from 'react';
+
+const useIntersectionObserver = (options = {}) => {
+  const elementRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        // Once visible, we can stop observing if we only want the animation to happen once
+        if (elementRef.current) {
+          observer.unobserve(elementRef.current);
+        }
+      }
+    }, { threshold: 0.1, ...options });
+
+    const currentElement = elementRef.current;
+
+    if (currentElement) {
+      observer.observe(currentElement);
+    }
+
+    return () => {
+      if (currentElement) {
+        observer.unobserve(currentElement);
+      }
+    };
+  }, [options]);
+
+  return [elementRef, isVisible] as const;
+};
+
+export default useIntersectionObserver;
